@@ -1,4 +1,4 @@
-package mockito2_demo.typechecks;
+package mockito2_demo.anychecks;
 
 
 import org.junit.Before;
@@ -18,7 +18,7 @@ import static org.mockito.Mockito.verify;
  * Tests for {@link User}
  */
 @RunWith (MockitoJUnitRunner.class)
-public class TypeCheckTests {
+public class AnyCheckTests {
 
 	public static final int EXPECTED_INTEGER = 98;
 
