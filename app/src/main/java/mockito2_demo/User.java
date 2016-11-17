@@ -1,6 +1,7 @@
 package mockito2_demo;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public final class User {
 
@@ -16,11 +17,19 @@ public final class User {
 		webService.sendMessages(list);
 	}
 
-	public void sendInteger(final int integer) {
+	public void sendInteger(final Integer integer) {
 		webService.sendInteger(integer);
 	}
 
 	public void sendObject(final Object object) {
 		webService.sendObject(object);
+	}
+
+	public void sendCollection(final Collection<Object> collection) {
+		webService.sendCollection(collection);
+	}
+
+	public void sendCollectionOfStrings(final Collection<String> strings) {
+		webService.sendCollection(strings);
 	}
 }
