@@ -1,4 +1,4 @@
-package com.egecius.mockito2_demo;
+package mockito2_demo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
