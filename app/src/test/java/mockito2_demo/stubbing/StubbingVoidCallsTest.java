@@ -48,8 +48,6 @@ public final class StubbingVoidCallsTest {
 		waterSource.throwException();
 	}
 
-
-
 }
 
 
