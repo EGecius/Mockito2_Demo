@@ -7,6 +7,9 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.mockito.AdditionalMatchers.aryEq;
+import static org.mockito.AdditionalMatchers.cmpEq;
+import static org.mockito.AdditionalMatchers.gt;
+import static org.mockito.AdditionalMatchers.leq;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.ArgumentMatchers.refEq;
@@ -93,6 +96,54 @@ public final class EqualityCheckTests {
 		verify(webService).sendArray(aryEq(arrayExpected));
 	}
 
+	/* COMPARABLE */
 
+	/* cmpEq - any object that is equal to the given using compareTo() method */
+
+	@Test
+	public void cmpEq_check_fails_objectsAreUnequalWithComparable() {
+		//WHEN
+		user.sendMyParent(new Child(3));
+		//THEN
+		verify(webService).sendMyParent(cmpEq(new Child(4)));
+	}
+
+
+	@Test
+	public void cmpEq_check_fails_objectsAreEqualWithComparable() {
+		//WHEN
+		user.sendMyParent(new Child(3));
+		//THEN
+		verify(webService).sendMyParent(cmpEq(new Child(3)));
+	}
+
+
+	/* gt - any argument greater, greater than the given value */
+
+	@Test
+	public void gt_check_fails_objectsAreEqualWithComparable() {
+		//WHEN
+		user.sendMyParent(new Child(3));
+		//THEN
+		verify(webService).sendMyParent(gt(new Child(3)));
+	}
+
+	@Test
+	public void gt_check_passes_argumentIsGreaterThanComparable() {
+		//WHEN
+		user.sendMyParent(new Child(3));
+		//THEN
+		verify(webService).sendMyParent(gt(new Child(2)));
+	}
+
+	/* leq - any argument greater less or equal than the given value */
+
+	@Test
+	public void leq_check_passes_argumentEqualtWithComparable() {
+		//WHEN
+		user.sendMyParent(new Child(3));
+		//THEN
+		verify(webService).sendMyParent(leq(new Child(3)));
+	}
 
 }
