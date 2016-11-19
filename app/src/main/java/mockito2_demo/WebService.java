@@ -21,4 +21,8 @@ public class WebService<T> {
 	public void sendCollection(final Collection<T> collection) {
 
 	}
+
+	public void sendMyParent(final MyParent parent) {
+
+	}
 }

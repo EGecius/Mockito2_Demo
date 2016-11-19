@@ -10,6 +10,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import mockito2_demo.Child;
+import mockito2_demo.MyParent;
 import mockito2_demo.User;
 import mockito2_demo.WebService;
 
@@ -18,6 +20,9 @@ import static org.mockito.ArgumentMatchers.anyCollection;
 import static org.mockito.ArgumentMatchers.anyCollectionOf;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -37,7 +42,7 @@ public class AnyCheckTests {
 		user = new User(webService);
 	}
 
-	/* anyInt() */
+	/* anyInt() - any integer but not null */
 
 	@Test
 	public void whenCalled_sendInteger_then_webServiceCallsSendInteger() {
@@ -81,7 +86,7 @@ public class AnyCheckTests {
 		verify(webService).sendObject(anyDouble());
 	}
 
-	/* any() */
+	/* any() - any object or null, the same in a form which allows to avoid casting */
 
 	@Test
 	public void whenReceivesNull_anyPasses() {
@@ -91,7 +96,7 @@ public class AnyCheckTests {
 		verify(webService).sendObject(any());
 	}
 
-	/* anyCollection() */
+	/* anyCollection() - respectively any collection type */
 
 	@Test
 	public void whenCollectionReceived_anyCollectionPasses() {
@@ -109,7 +114,7 @@ public class AnyCheckTests {
 		verify(webService).sendCollection(anyCollection());
 	}
 
-	/* anyCollectionOf()*/
+	/* anyCollectionOf() - respectively any collection type in a generic friendly way */
 
 	@Test
 	public void whenWrongCollectionTypeReceived_thenAnyCollectionOfPasses() {
@@ -123,5 +128,6 @@ public class AnyCheckTests {
 		// compiler warnings.
 		verify(webService).sendCollection(anyCollectionOf(Integer.class));
 	}
+
 
 }

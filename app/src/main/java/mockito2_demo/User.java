@@ -32,4 +32,8 @@ public final class User {
 	public void sendCollectionOfStrings(final Collection<String> strings) {
 		webService.sendCollection(strings);
 	}
+
+	public void sendMyParent(final MyParent myParent) {
+		webService.sendMyParent(myParent);
+	}
 }
