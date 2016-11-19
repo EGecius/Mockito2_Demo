@@ -6,9 +6,16 @@ import java.util.Collection;
 public final class User {
 
 	private final WebService webService;
+	private final StorageService storageService;
 
 	public User(final WebService webService) {
 		this.webService = webService;
+		this.storageService = new StorageService();
+	}
+
+	public User(final WebService webService, final StorageService storageService) {
+		this.webService = webService;
+		this.storageService = storageService;
 	}
 
 	public void sendMessageInList(final String message) {
@@ -43,5 +50,10 @@ public final class User {
 
 	public void sendArray(final String[] strings) {
 		webService.sendArray(strings);
+	}
+
+	public void sendAndSaveMessage(final String myMessage) {
+		webService.sendMessage(myMessage);
+		storageService.save(myMessage);
 	}
 }
