@@ -29,4 +29,8 @@ public class WebService<T> {
 	public void sendMessage(final String matches) {
 
 	}
+
+	public void sendArray(final String[] strings) {
+
+	}
 }

@@ -40,4 +40,8 @@ public final class User {
 	public void sendMessage(final String message) {
 		webService.sendMessage(message);
 	}
+
+	public void sendArray(final String[] strings) {
+		webService.sendArray(strings);
+	}
 }

@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import static org.mockito.AdditionalMatchers.aryEq;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.ArgumentMatchers.refEq;
@@ -69,4 +70,29 @@ public final class EqualityCheckTests {
 		//THEN
 		verify(webService).sendMyParent(eq(new Child(3)));
 	}
+
+	/* aryEq - an array that is equal to the given array (has the same length and each element is equal) */
+
+	@Test
+	public void aryEq_check_passes_whenArrayIsEqual() {
+		//WHEN
+		String[] arrayPassed = {"one", "two", "three"};
+		String[] arrayExpected = {"one", "two", "three"};
+		user.sendArray(arrayPassed);
+		//THEN
+		verify(webService).sendArray(aryEq(arrayExpected));
+	}
+
+	@Test
+	public void aryEq_check_fails_whenArraysAreUnequal() {
+		//WHEN
+		String[] arrayPassed = {"one", "two", "three"};
+		String[] arrayExpected = {"one", "two"};
+		user.sendArray(arrayPassed);
+		//THEN
+		verify(webService).sendArray(aryEq(arrayExpected));
+	}
+
+
+
 }
