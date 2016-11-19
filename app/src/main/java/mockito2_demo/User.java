@@ -11,7 +11,7 @@ public final class User {
 		this.webService = webService;
 	}
 
-	public void sendMessage(final String message) {
+	public void sendMessageInList(final String message) {
 		ArrayList<Object> list = new ArrayList<>();
 		list.add(message);
 		webService.sendMessages(list);
@@ -35,5 +35,9 @@ public final class User {
 
 	public void sendMyParent(final MyParent myParent) {
 		webService.sendMyParent(myParent);
+	}
+
+	public void sendMessage(final String message) {
+		webService.sendMessage(message);
 	}
 }

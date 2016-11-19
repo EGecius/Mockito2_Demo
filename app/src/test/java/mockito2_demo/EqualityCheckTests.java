@@ -12,7 +12,7 @@ import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.verify;
 
 @RunWith (MockitoJUnitRunner.class)
-final class EqualityCheckTests {
+public final class EqualityCheckTests {
 
 
 	@Mock WebService webService;

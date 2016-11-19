@@ -32,7 +32,7 @@ final class CustomMatcherTest {
 	@Test
 	public void whenCalled_sendMessage_then_webServiceCallsSendMessages() {
 		//WHEN
-		user.sendMessage(EXPECTED_MESSAGE);
+		user.sendMessageInList(EXPECTED_MESSAGE);
 		//THEN
 		verify(webService).sendMessages(argThat(new ListContains<>(EXPECTED_MESSAGE)));
 	}

@@ -25,4 +25,8 @@ public class WebService<T> {
 	public void sendMyParent(final MyParent parent) {
 
 	}
+
+	public void sendMessage(final String matches) {
+
+	}
 }
