@@ -3,7 +3,7 @@ package mockito2_demo;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public final class User {
+public class User {
 
 	private final WebService webService;
 	private final StorageService storageService;
