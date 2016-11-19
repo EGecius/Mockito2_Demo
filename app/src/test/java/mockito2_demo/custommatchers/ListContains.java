@@ -4,7 +4,7 @@ import org.mockito.ArgumentMatcher;
 
 import java.util.List;
 
-final class ListContains<T> implements ArgumentMatcher<List> {
+public final class ListContains<T> implements ArgumentMatcher<List> {
 
 	private final T object;
 

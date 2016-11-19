@@ -13,7 +13,7 @@ import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.verify;
 
 @RunWith (MockitoJUnitRunner.class)
-final class CustomMatcherTest {
+public final class CustomMatcherTest {
 
 
 	public static final String EXPECTED_MESSAGE = "expected_message";
