@@ -1,10 +1,14 @@
 package mockito2_demo.custommatchers;
 
+import android.support.annotation.Nullable;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+
+import java.util.List;
 
 import mockito2_demo.User;
 import mockito2_demo.WebService;
@@ -34,7 +38,12 @@ public final class CustomMatcherTest {
 		//WHEN
 		user.sendMessageInList(EXPECTED_MESSAGE);
 		//THEN
-		verify(webService).sendMessages(argThat(new ListContains<>(EXPECTED_MESSAGE)));
+		verify(webService).sendMessages(listContains(EXPECTED_MESSAGE));
+	}
+
+	@Nullable
+	private List<String> listContains(final String expectedMessage) {
+		return argThat(new ListContains<String>(expectedMessage));
 	}
 
 }
