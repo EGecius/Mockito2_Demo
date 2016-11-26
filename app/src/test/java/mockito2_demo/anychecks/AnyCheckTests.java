@@ -1,6 +1,8 @@
 package mockito2_demo.anychecks;
 
 
+import junit.framework.ComparisonFailure;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import mockito2_demo.Child;
-import mockito2_demo.MyParent;
+import mockito2_demo.Parent;
 import mockito2_demo.User;
 import mockito2_demo.WebService;
 
@@ -21,8 +23,6 @@ import static org.mockito.ArgumentMatchers.anyCollectionOf;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.ArgumentMatchers.isA;
-import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -129,5 +129,22 @@ public class AnyCheckTests {
 		verify(webService).sendCollection(anyCollectionOf(Integer.class));
 	}
 
+	/* any(Class) - Matches any object of given type, excluding nulls */
+	
+	@Test
+	public void whenCalled_anyWithChild_then_assertionWithParentPasses() {
+		//WHEN
+		user.sendObject(new Child(4));
+		//THEN
+		verify(webService).sendObject(any(Parent.class));
+	}
+
+	@Test (expected = ComparisonFailure.class)
+	public void whenCalled_anyWithParent_then_assertionWithChildFails() {
+		//WHEN
+		user.sendObject(new Parent());
+		//THEN
+		verify(webService).sendObject(any(Child.class));
+	}
 
 }

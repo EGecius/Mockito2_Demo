@@ -33,9 +33,9 @@ public final class EqualityCheckTests {
 	@Test
 	public void when_passesSameClassObject_thenIsAVerificationPasses() {
 		//WHEN
-		user.sendMyParent(new MyParent());
+		user.sendMyParent(new Parent());
 		//THEN
-		verify(webService).sendMyParent(isA(MyParent.class));
+		verify(webService).sendMyParent(isA(Parent.class));
 	}
 
 	@Test
@@ -43,7 +43,7 @@ public final class EqualityCheckTests {
 		//WHEN
 		user.sendMyParent(new Child(3));
 		//THEN
-		verify(webService).sendMyParent(isA(MyParent.class));
+		verify(webService).sendMyParent(isA(Parent.class));
 	}
 
 	/* refEq - Any object that is equal to the given using reflection; some fields can be excluded */

@@ -1,6 +1,6 @@
 package mockito2_demo;
 
-public class Child extends MyParent implements Comparable<Child> {
+public class Child extends Parent implements Comparable<Child> {
 
 	private final int age;
 

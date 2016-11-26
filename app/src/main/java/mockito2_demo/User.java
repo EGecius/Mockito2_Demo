@@ -40,8 +40,8 @@ public class User {
 		webService.sendCollection(strings);
 	}
 
-	public void sendMyParent(final MyParent myParent) {
-		webService.sendMyParent(myParent);
+	public void sendMyParent(final Parent parent) {
+		webService.sendMyParent(parent);
 	}
 
 	public void sendMessage(final String message) {

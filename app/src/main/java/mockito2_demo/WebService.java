@@ -22,7 +22,7 @@ public class WebService<T> {
 
 	}
 
-	public void sendMyParent(final MyParent parent) {
+	public void sendMyParent(final Parent parent) {
 
 	}
 
