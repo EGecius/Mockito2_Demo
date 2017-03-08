@@ -13,4 +13,12 @@ public class WaterSource {
 	public void throwException() {
 		throw new RuntimeException();
 	}
+
+	public int getTap(int index) {
+		return index;
+	}
+
+	public int getTap(final int index, final PlantWaterer.Type type) {
+		return index;
+	}
 }

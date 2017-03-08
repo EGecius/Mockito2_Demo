@@ -2,6 +2,11 @@ package mockito2_demo;
 
 public class PlantWaterer {
 
+	public enum Type {
+		SIMPLE, CUSTOM
+	}
+
+
 	private final WaterSource waterSource;
 	private final WateringScheduler wateringScheduler;
 
@@ -16,5 +21,13 @@ public class PlantWaterer {
 
 	public WateringScheduler getWateringScheduler() {
 		return wateringScheduler;
+	}
+
+	public int getTap(int index) {
+		return waterSource.getTap(index);
+	}
+
+	public int getTap(int index, Type type) {
+		return waterSource.getTap(index, type);
 	}
 }
