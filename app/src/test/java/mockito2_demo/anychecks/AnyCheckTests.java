@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
@@ -22,7 +23,6 @@ import static org.mockito.ArgumentMatchers.anyCollection;
 import static org.mockito.ArgumentMatchers.anyCollectionOf;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -52,7 +52,7 @@ public class AnyCheckTests {
 		verify(webService).sendInteger(anyInt());
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void whenReceivesNull_anyIntFails() {
 		//WHEN
 		user.sendInteger(null);
@@ -60,7 +60,7 @@ public class AnyCheckTests {
 		verify(webService).sendInteger(anyInt());
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void whenDoubleReceived_anyIntFails() {
 		//WHEN
 		user.sendObject(Double.valueOf(34));
@@ -70,7 +70,7 @@ public class AnyCheckTests {
 
 	/* anyDouble() */
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void whenIntReceived_anyDoubleFails() {
 		//WHEN
 		user.sendObject(Integer.valueOf(22));
@@ -106,7 +106,7 @@ public class AnyCheckTests {
 		verify(webService).sendCollection(anyCollection());
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void whenNullReceived_anyCollectionFails() {
 		//WHEN
 		user.sendCollection(null);
