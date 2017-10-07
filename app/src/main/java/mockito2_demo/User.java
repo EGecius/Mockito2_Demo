@@ -56,4 +56,9 @@ public class User {
 		webService.sendMessage(myMessage);
 		storageService.save(myMessage);
 	}
+
+	public void sendSaved(String key) {
+        String saved = storageService.readSaved(key);
+        webService.sendMessage(saved);
+    }
 }

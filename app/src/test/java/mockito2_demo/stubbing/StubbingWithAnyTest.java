@@ -27,7 +27,7 @@ public class StubbingWithAnyTest {
 	@Before
 	public void setup() {
 		given(waterSource.getTap(anyInt())).willReturn(ANY_INT_STUBBED);
-		given(waterSource.getTap(anyInt(), any())).willReturn(ANY_TYPE_STUBBED);
+		given(waterSource.getTap(anyInt(), (PlantWaterer.Type) any())).willReturn(ANY_TYPE_STUBBED);
 		plantWaterer = new PlantWaterer(waterSource, wateringScheduler);
 	}
 

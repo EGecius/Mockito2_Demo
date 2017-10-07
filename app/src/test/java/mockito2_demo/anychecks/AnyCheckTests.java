@@ -15,6 +15,7 @@ import java.util.Collections;
 
 import mockito2_demo.Child;
 import mockito2_demo.Parent;
+import mockito2_demo.StorageService;
 import mockito2_demo.User;
 import mockito2_demo.WebService;
 
@@ -23,7 +24,9 @@ import static org.mockito.ArgumentMatchers.anyCollection;
 import static org.mockito.ArgumentMatchers.anyCollectionOf;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Tests for {@link User}
@@ -34,12 +37,13 @@ public class AnyCheckTests {
 	public static final int EXPECTED_INTEGER = 98;
 
 	@Mock WebService webService;
+    @Mock StorageService mStorageService;
 
 	User user;
 
 	@Before
 	public void setup() {
-		user = new User(webService);
+		user = new User(webService, mStorageService);
 	}
 
 	/* anyInt() - any integer but not null */
@@ -95,6 +99,17 @@ public class AnyCheckTests {
 		//THEN
 		verify(webService).sendObject(any());
 	}
+
+	/* any() - any object or null even in stubbing */
+
+	@Test
+	public void mockingWithWhenAcceptsEvenNullArgs() {
+        when(mStorageService.readSaved((String) any())).thenReturn("mocked_saved");
+
+        user.sendSaved(null);
+
+        verify(webService).sendMessage("mocked_saved");
+    }
 
 	/* anyCollection() - respectively any collection type */
 
