@@ -10,6 +10,9 @@ public class WaterSource {
 	public void doSelfCheck() {
 	}
 
+    public void callVoid(int i) {
+    }
+
 	public void throwException() {
 		throw new RuntimeException();
 	}

@@ -1,5 +1,10 @@
 package mockito2_demo.stubbing;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.BDDMockito.given;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,11 +14,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import mockito2_demo.PlantWaterer;
 import mockito2_demo.WaterSource;
 import mockito2_demo.WateringScheduler;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.BDDMockito.given;
 
 @RunWith(MockitoJUnitRunner.class)
 public class StubbingWithAnyTest {

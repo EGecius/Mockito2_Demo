@@ -1,15 +1,19 @@
 package mockito2_demo.stubbing;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.BDDMockito.willThrow;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doThrow;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
 
 import mockito2_demo.WaterSource;
-
-import static org.mockito.BDDMockito.willThrow;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.doThrow;
 
 @RunWith (MockitoJUnitRunner.class)
 public final class StubbingVoidCallsTest {
@@ -47,6 +51,28 @@ public final class StubbingVoidCallsTest {
 
 		waterSource.throwException();
 	}
+
+	@Test
+	public void doAnswer_allowsAddingBehaviourOnCallsOfVoidMethods() {
+
+        final int[] localVariableToChange = {0};
+
+        Answer answer = new Answer() {
+            @Override
+            public Object answer(final InvocationOnMock invocation) throws Throwable {
+                int argument = invocation.getArgument(0);
+
+                localVariableToChange[0] = argument;
+                return null;
+            }
+        };
+
+        doAnswer(answer).when(waterSource).callVoid(anyInt());
+
+        waterSource.callVoid(5);
+
+        assertThat(localVariableToChange[0]).isEqualTo(5);
+    }
 
 }
 
