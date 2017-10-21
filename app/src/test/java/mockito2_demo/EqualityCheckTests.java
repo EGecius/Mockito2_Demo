@@ -1,11 +1,5 @@
 package mockito2_demo;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-
 import static org.mockito.AdditionalMatchers.aryEq;
 import static org.mockito.AdditionalMatchers.cmpEq;
 import static org.mockito.AdditionalMatchers.gt;
@@ -14,6 +8,13 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.Mockito.verify;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
+import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith (MockitoJUnitRunner.class)
 public final class EqualityCheckTests {
@@ -37,6 +38,14 @@ public final class EqualityCheckTests {
 		//THEN
 		verify(webService).sendMyParent(isA(Parent.class));
 	}
+
+    @Test (expected = ArgumentsAreDifferent.class)
+    public void when_passesMismatchingType_thenIsAVerificationFails() {
+        //WHEN
+        user.sendMyParent(new Parent());
+        //THEN
+        verify(webService).sendMyParent(isA(Child.class));
+    }
 
 	@Test
 	public void when_passesChildClassObject_thenIsAVerificationPasses() {
