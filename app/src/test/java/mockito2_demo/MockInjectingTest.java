@@ -12,9 +12,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith (MockitoJUnitRunner.class)
 public class MockInjectingTest {
 
-	@Mock private WaterSource waterSourceMock;
+    /* Main problem with @InjectMocks is that it only fails at runtime, when constructor
+     * arguments are missing */
+    @InjectMocks private PlantWaterer plantWaterer;
+
+	@Mock
+    private WaterSource waterSourceMock;
 	@Spy private WateringScheduler wateringSchedulerSpy;
-	@InjectMocks private PlantWaterer plantWaterer;
 
 	@Test
 	public void injectsMocksAndSpiesFoundInThisClass() {
