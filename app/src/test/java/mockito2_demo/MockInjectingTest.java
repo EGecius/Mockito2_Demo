@@ -17,7 +17,7 @@ public class MockInjectingTest {
 	@InjectMocks private PlantWaterer plantWaterer;
 
 	@Test
-	public void injectsMocksAndSpysFoundInThisClass() {
+	public void injectsMocksAndSpiesFoundInThisClass() {
 		assertNotNull(plantWaterer.getWaterSource());
 		assertNotNull(plantWaterer.getWateringScheduler());
 	}
