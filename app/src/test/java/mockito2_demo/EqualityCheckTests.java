@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith (MockitoJUnitRunner.class)
 public final class EqualityCheckTests {
@@ -52,7 +52,9 @@ public final class EqualityCheckTests {
 		//WHEN
 		user.sendMyParent(new Child(3));
 		//THEN
+
 		verify(webService).sendMyParent(isA(Parent.class));
+
 	}
 
 	/* refEq - Any object that is equal to the given using reflection; some fields can be excluded */
@@ -62,7 +64,9 @@ public final class EqualityCheckTests {
 		//WHEN
 		user.sendMyParent(new Child(3));
 		//THEN
+
 		verify(webService).sendMyParent(refEq(new Child(3)));
+
 	}
 
 	@Test
@@ -80,7 +84,9 @@ public final class EqualityCheckTests {
 		//WHEN
 		user.sendMyParent(new Child(3));
 		//THEN
+
 		verify(webService).sendMyParent(eq(new Child(3)));
+
 	}
 
 	/* aryEq - an array that is equal to the given array (has the same length and each element is equal) */
@@ -88,11 +94,13 @@ public final class EqualityCheckTests {
 	@Test
 	public void aryEq_check_passes_whenArrayIsEqual() {
 		//WHEN
+
 		String[] arrayPassed = {"one", "two", "three"};
 		String[] arrayExpected = {"one", "two", "three"};
 		user.sendArray(arrayPassed);
 		//THEN
 		verify(webService).sendArray(aryEq(arrayExpected));
+
 	}
 
 	@Test
@@ -123,7 +131,9 @@ public final class EqualityCheckTests {
 		//WHEN
 		user.sendMyParent(new Child(3));
 		//THEN
+
 		verify(webService).sendMyParent(cmpEq(new Child(3)));
+
 	}
 
 
@@ -134,7 +144,9 @@ public final class EqualityCheckTests {
 		//WHEN
 		user.sendMyParent(new Child(3));
 		//THEN
+
 		verify(webService).sendMyParent(gt(new Child(3)));
+
 	}
 
 	@Test

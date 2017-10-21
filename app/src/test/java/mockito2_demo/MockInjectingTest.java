@@ -1,13 +1,13 @@
 package mockito2_demo;
 
+import static junit.framework.Assert.assertNotNull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import static junit.framework.Assert.assertNotNull;
+import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith (MockitoJUnitRunner.class)
 public class MockInjectingTest {
