@@ -1,16 +1,16 @@
 package mockitodemo;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.ArgumentMatchers.endsWith;
 import static org.mockito.ArgumentMatchers.matches;
 import static org.mockito.ArgumentMatchers.startsWith;
 import static org.mockito.Mockito.verify;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith (MockitoJUnitRunner.class)
 public final class StringTests {
@@ -26,7 +26,7 @@ public final class StringTests {
 	/* matches - String that matches the given regular expression */
 
 	@Test
-	public void matches_check_passesWithMathingRegex() {
+	public void matches_check_passesWithMatchingRegex() {
 		user.sendMessage("a");
 		//THEN
 		verify(webService).sendMessage(matches("[abc]"));
