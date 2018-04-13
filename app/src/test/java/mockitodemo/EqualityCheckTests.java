@@ -69,7 +69,7 @@ public final class EqualityCheckTests {
 
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void refEq_check_failsForDifferentObjectWithSameFields() {
 		//WHEN
 		user.sendMyParent(new Child(2));
@@ -86,7 +86,6 @@ public final class EqualityCheckTests {
 		//THEN
 
 		verify(webService).sendMyParent(eq(new Child(3)));
-
 	}
 
 	/* aryEq - an array that is equal to the given array (has the same length and each element is equal) */
@@ -103,7 +102,7 @@ public final class EqualityCheckTests {
 
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void aryEq_check_fails_whenArraysAreUnequal() {
 		//WHEN
 		String[] arrayPassed = {"one", "two", "three"};
@@ -117,7 +116,7 @@ public final class EqualityCheckTests {
 
 	/* cmpEq - any object that is equal to the given using compareTo() method */
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void cmpEq_check_fails_objectsAreUnequalWithComparable() {
 		//WHEN
 		user.sendMyParent(new Child(3));
@@ -139,7 +138,7 @@ public final class EqualityCheckTests {
 
 	/* gt - any argument greater, greater than the given value */
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void gt_check_fails_objectsAreEqualWithComparable() {
 		//WHEN
 		user.sendMyParent(new Child(3));
