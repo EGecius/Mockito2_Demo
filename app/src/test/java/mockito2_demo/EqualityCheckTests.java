@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 import static org.mockito.AdditionalMatchers.aryEq;
 import static org.mockito.AdditionalMatchers.cmpEq;

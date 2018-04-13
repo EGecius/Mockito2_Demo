@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 import static junit.framework.Assert.assertEquals;
 

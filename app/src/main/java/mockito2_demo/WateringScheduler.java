@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 public class WateringScheduler {
 }

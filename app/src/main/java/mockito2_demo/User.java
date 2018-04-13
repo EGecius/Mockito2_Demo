@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 import java.util.ArrayList;
 import java.util.Collection;

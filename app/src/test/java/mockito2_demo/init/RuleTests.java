@@ -1,4 +1,4 @@
-package mockito2_demo.init;
+package mockitodemo.init;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

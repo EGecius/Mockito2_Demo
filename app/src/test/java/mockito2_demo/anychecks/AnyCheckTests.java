@@ -1,4 +1,4 @@
-package mockito2_demo.anychecks;
+package mockitodemo.anychecks;
 
 
 import static org.mockito.ArgumentMatchers.any;
@@ -21,11 +21,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import mockito2_demo.Child;
-import mockito2_demo.Parent;
-import mockito2_demo.StorageService;
-import mockito2_demo.User;
-import mockito2_demo.WebService;
+import mockitodemo.Child;
+import mockitodemo.Parent;
+import mockitodemo.StorageService;
+import mockitodemo.User;
+import mockitodemo.WebService;
 
 /**
  * Tests for {@link User}

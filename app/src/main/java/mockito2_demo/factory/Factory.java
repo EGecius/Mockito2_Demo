@@ -1,4 +1,4 @@
-package mockito2_demo.factory;
+package mockitodemo.factory;
 
 public class Factory {
 

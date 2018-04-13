@@ -1,12 +1,12 @@
-package mockito2_demo.defaultreturntypes;
+package mockitodemo.defaultreturntypes;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import mockito2_demo.PlantWaterer;
-import mockito2_demo.Toolbox;
+import mockitodemo.PlantWaterer;
+import mockitodemo.Toolbox;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;

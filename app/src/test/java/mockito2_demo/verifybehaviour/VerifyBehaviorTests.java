@@ -1,4 +1,4 @@
-package mockito2_demo.verifybehaviour;
+package mockitodemo.verifybehaviour;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -7,8 +7,8 @@ import org.mockito.Mock;
 import org.mockito.exceptions.verification.NoInteractionsWanted;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import mockito2_demo.User;
-import mockito2_demo.WebService;
+import mockitodemo.User;
+import mockitodemo.WebService;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.atLeastOnce;

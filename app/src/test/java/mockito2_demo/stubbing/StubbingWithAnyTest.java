@@ -1,4 +1,4 @@
-package mockito2_demo.stubbing;
+package mockitodemo.stubbing;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import mockito2_demo.PlantWaterer;
-import mockito2_demo.WaterSource;
-import mockito2_demo.WateringScheduler;
+import mockitodemo.PlantWaterer;
+import mockitodemo.WaterSource;
+import mockitodemo.WateringScheduler;
 
 @RunWith(MockitoJUnitRunner.class)
 public class StubbingWithAnyTest {

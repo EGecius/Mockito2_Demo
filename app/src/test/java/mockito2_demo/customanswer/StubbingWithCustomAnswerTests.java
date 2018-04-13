@@ -1,4 +1,4 @@
-package mockito2_demo.customanswer;
+package mockitodemo.customanswer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,10 +8,10 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
-import mockito2_demo.FlowerFilter;
+import mockitodemo.FlowerFilter;
 
 import static junit.framework.Assert.assertEquals;
-import static mockito2_demo.customanswer.StubbingWithCustomAnswerTests.ReturnFirstArgument.returnFirstArgumentTimes2;
+import static mockitodemo.customanswer.StubbingWithCustomAnswerTests.ReturnFirstArgument.returnFirstArgumentTimes2;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.BDDMockito.given;
 

@@ -1,4 +1,4 @@
-package mockito2_demo.defaultreturntypes;
+package mockitodemo.defaultreturntypes;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,7 +6,7 @@ import org.mockito.Answers;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import mockito2_demo.factory.Factory;
+import mockitodemo.factory.Factory;
 
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;

@@ -1,4 +1,4 @@
-package mockito2_demo.custommatchers;
+package mockitodemo.custommatchers;
 
 import android.support.annotation.Nullable;
 
@@ -10,8 +10,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-import mockito2_demo.User;
-import mockito2_demo.WebService;
+import mockitodemo.User;
+import mockitodemo.WebService;
 
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.verify;

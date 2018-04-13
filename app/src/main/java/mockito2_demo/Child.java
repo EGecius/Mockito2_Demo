@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 public class Child extends Parent implements Comparable<Child> {
 

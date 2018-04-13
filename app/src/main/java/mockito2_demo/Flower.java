@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 public class Flower {
 	public void setNumberOfLeafs(final int originalNumberOfLeafs) {

@@ -1,4 +1,4 @@
-package mockito2_demo.custommatchers;
+package mockitodemo.custommatchers;
 
 import org.mockito.ArgumentMatcher;
 

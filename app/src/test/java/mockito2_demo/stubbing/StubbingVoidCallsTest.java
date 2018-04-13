@@ -1,4 +1,4 @@
-package mockito2_demo.stubbing;
+package mockitodemo.stubbing;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -15,7 +15,7 @@ import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
-import mockito2_demo.WaterSource;
+import mockitodemo.WaterSource;
 
 @RunWith (MockitoJUnitRunner.class)
 public final class StubbingVoidCallsTest {

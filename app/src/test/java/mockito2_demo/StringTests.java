@@ -1,4 +1,4 @@
-package mockito2_demo;
+package mockitodemo;
 
 import org.junit.Before;
 import org.junit.Test;

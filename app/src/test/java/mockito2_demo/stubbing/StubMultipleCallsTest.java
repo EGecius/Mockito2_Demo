@@ -1,11 +1,11 @@
-package mockito2_demo.stubbing;
+package mockitodemo.stubbing;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import mockito2_demo.WaterSource;
+import mockitodemo.WaterSource;
 
 import static junit.framework.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;
