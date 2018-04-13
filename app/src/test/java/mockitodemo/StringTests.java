@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
 import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith (MockitoJUnitRunner.class)
@@ -32,7 +33,7 @@ public final class StringTests {
 		verify(webService).sendMessage(matches("[abc]"));
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void matches_check_failsWithMismatchingRegex() {
 		user.sendMessage("d");
 		//THEN
@@ -49,7 +50,7 @@ public final class StringTests {
 		verify(webService).sendMessage(startsWith("egi"));
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void startsWith_check_passesWithMismatchingString() {
 		user.sendMessage("egidijus");
 		//THEN
@@ -65,7 +66,7 @@ public final class StringTests {
 		verify(webService).sendMessage(endsWith("jus"));
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void endsWith_check_failsWithMismatchingString() {
 		user.sendMessage("egidijus");
 		//THEN
@@ -83,7 +84,7 @@ public final class StringTests {
 		verify(webService).sendMessage(contains("gi"));
 	}
 
-	@Test
+	@Test (expected = ArgumentsAreDifferent.class)
 	public void contains_check_failsWithMismatchingString() {
 		user.sendMessage("egidijus");
 		//THEN
