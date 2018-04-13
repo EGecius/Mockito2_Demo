@@ -1,5 +1,7 @@
 package mockitodemo;
 
+import static org.mockito.Mockito.inOrder;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,8 +9,6 @@ import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.exceptions.verification.VerificationInOrderFailure;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import static org.mockito.Mockito.inOrder;
 
 @RunWith (MockitoJUnitRunner.class)
 public final class CallOrderTests {
