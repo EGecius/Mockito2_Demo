@@ -1,12 +1,12 @@
 package mockitodemo
 
-class FlowerFilter {
+open class FlowerFilter {
 
-    fun filterNoOfFlowers(testNumberOfFlowers: Int): Int {
+    open fun filterNoOfFlowers(testNumberOfFlowers: Int): Int {
         return 0
     }
 
-    fun tellMeFlowerName(): String? {
+    open fun tellMeFlowerName(): String? {
         return null
     }
 
