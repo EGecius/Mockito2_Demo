@@ -14,6 +14,7 @@ import junit.framework.ComparisonFailure;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -38,6 +39,7 @@ public class AnyCheckTests {
 	@Mock WebService webService;
     @Mock StorageService mStorageService;
 
+    @InjectMocks
 	User user;
 
 	@Before
