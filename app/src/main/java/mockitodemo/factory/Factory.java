@@ -6,10 +6,5 @@ public class Factory {
 		return new Car();
 	}
 
-	public Tractor createTractor() {
-		return new Tractor();
-	}
-
-	public static class Car {}
-	public static class Tractor {}
+    public static class Car {}
 }

@@ -1,5 +1,8 @@
 package mockitodemo.defaultreturntypes;
 
+import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertNull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;
@@ -8,18 +11,15 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import mockitodemo.factory.Factory;
 
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
-
-/**
- * Tests for {@link Factory}
- */
+@SuppressWarnings("WeakerAccess")
 @RunWith (MockitoJUnitRunner.class)
 public class FactoryTest {
 
-	@Mock (answer = Answers.RETURNS_MOCKS) Factory factoryReturningMocks;
+	@Mock (answer = Answers.RETURNS_MOCKS)
+    Factory factoryReturningMocks;
 
-	@Mock Factory factoryReturningDefaults;
+	@Mock
+    Factory factoryReturningDefaults;
 
 	@Test
 	public void mockConfiguredToReturnMocksByDefault() {
