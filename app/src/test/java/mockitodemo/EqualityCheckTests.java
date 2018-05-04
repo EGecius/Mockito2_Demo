@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.exceptions.verification.junit.ArgumentsAreDifferent;
 import org.mockito.junit.MockitoJUnitRunner;
 
+@SuppressWarnings("WeakerAccess")
 @RunWith (MockitoJUnitRunner.class)
 public final class EqualityCheckTests {
 
