@@ -1,7 +1,6 @@
 package mockitodemo.defaultreturntypes;
 
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
+import static junit.framework.Assert.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
